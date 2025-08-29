@@ -1,5 +1,7 @@
 # Hi, I'm Dharnish Giri 👋
 
+[![Download CV](https://img.shields.io/badge/Download-CV-blue?style=for-the-badge&logo=adobeacrobat)](https://github.com/Dharnish08/portfolio/blob/main/dharnish%20giri_RST.pdf)
+
 Motivated and detail-oriented **Robotics and Automation Engineer** with hands-on experience in industrial robot programming (KUKA, ABB, Mitsubishi) and academic expertise in ROS-based robot control, motion planning, and path navigation. Passionate about Mobile Robotics and Computer Vision.
 
 ---
