@@ -23,6 +23,8 @@ Motivated and detail-oriented **Robotics and Automation Engineer** with hands-on
 
 ## 💼 Work Experience
 
+![1675095993318](https://github.com/user-attachments/assets/794f4242-cc96-42a9-aa59-3cef8fdc98dc)
+
 **Robotics Engineer** – Titan Engineering and Automation Limited | Aug 2023 - Aug 2024  
 - Automated Cylindrical Battery Pack and Deep Groove Ball Bearing Assembly lines.  
 - Programmed Mitsubishi and ABB robots for pick & place, dispensing, and vision-guided tasks.  
