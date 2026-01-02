@@ -6,7 +6,7 @@
     <title>Developer Portfolio</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@400;500;700&display=swap');
-
+        
         :root {
             --bg-primary: #0a0a0a;
             --bg-secondary: #1a1a1a;
@@ -16,13 +16,13 @@
             --text-secondary: #a0a0a0;
             --border: #333333;
         }
-
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-
+        
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--bg-primary);
@@ -30,7 +30,7 @@
             line-height: 1.6;
             overflow-x: hidden;
         }
-
+        
         /* Animated background */
         .bg-gradient {
             position: fixed;
@@ -44,12 +44,12 @@
             pointer-events: none;
             z-index: 0;
         }
-
+        
         @keyframes gradientShift {
             0%, 100% { opacity: 0.5; transform: scale(1) rotate(0deg); }
             50% { opacity: 0.8; transform: scale(1.1) rotate(5deg); }
         }
-
+        
         .container {
             position: relative;
             z-index: 1;
@@ -57,7 +57,7 @@
             margin: 0 auto;
             padding: 0 2rem;
         }
-
+        
         /* Navigation */
         nav {
             position: fixed;
@@ -70,19 +70,19 @@
             z-index: 100;
             animation: slideDown 0.8s ease;
         }
-
+        
         @keyframes slideDown {
             from { transform: translateY(-100%); opacity: 0; }
             to { transform: translateY(0); opacity: 1; }
         }
-
+        
         nav .container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             padding: 1.5rem 2rem;
         }
-
+        
         .logo {
             font-family: 'Playfair Display', serif;
             font-size: 1.5rem;
@@ -92,13 +92,13 @@
             -webkit-text-fill-color: transparent;
             background-clip: text;
         }
-
+        
         .nav-links {
             display: flex;
             gap: 2rem;
             list-style: none;
         }
-
+        
         .nav-links a {
             color: var(--text-secondary);
             text-decoration: none;
@@ -106,11 +106,11 @@
             position: relative;
             transition: color 0.3s ease;
         }
-
+        
         .nav-links a:hover {
             color: var(--accent);
         }
-
+        
         .nav-links a::after {
             content: '';
             position: absolute;
@@ -121,11 +121,11 @@
             background: var(--accent);
             transition: width 0.3s ease;
         }
-
+        
         .nav-links a:hover::after {
             width: 100%;
         }
-
+        
         /* Hero Section */
         .hero {
             min-height: 100vh;
@@ -133,14 +133,14 @@
             align-items: center;
             padding-top: 80px;
         }
-
+        
         .hero-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4rem;
             align-items: center;
         }
-
+        
         .hero-text h1 {
             font-family: 'Playfair Display', serif;
             font-size: 5rem;
@@ -149,30 +149,30 @@
             margin-bottom: 1.5rem;
             animation: fadeInUp 1s ease 0.2s both;
         }
-
+        
         @keyframes fadeInUp {
             from { opacity: 0; transform: translateY(30px); }
             to { opacity: 1; transform: translateY(0); }
         }
-
+        
         .hero-text h1 .accent {
             color: var(--accent);
             display: block;
         }
-
+        
         .hero-text p {
             font-size: 1.2rem;
             color: var(--text-secondary);
             margin-bottom: 2rem;
             animation: fadeInUp 1s ease 0.4s both;
         }
-
+        
         .cta-buttons {
             display: flex;
             gap: 1rem;
             animation: fadeInUp 1s ease 0.6s both;
         }
-
+        
         .btn {
             padding: 1rem 2rem;
             border: none;
@@ -183,66 +183,74 @@
             text-decoration: none;
             display: inline-block;
         }
-
+        
         .btn-primary {
             background: var(--accent);
             color: var(--bg-primary);
         }
-
+        
         .btn-primary:hover {
             transform: translateY(-2px);
             box-shadow: 0 10px 30px var(--accent-dim);
         }
-
+        
         .btn-secondary {
             background: transparent;
             color: var(--text-primary);
             border: 2px solid var(--border);
         }
-
+        
         .btn-secondary:hover {
             border-color: var(--accent);
             color: var(--accent);
         }
-
-        /* Code Block Decoration */
-        .code-block {
-            background: var(--bg-secondary);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 2rem;
-            font-family: 'Courier New', monospace;
-            position: relative;
-            overflow: hidden;
+        
+        /* Profile Photo */
+        .profile-photo-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
             animation: fadeInUp 1s ease 0.8s both;
         }
-
-        .code-block::before {
+        
+        .profile-photo {
+            position: relative;
+            width: 400px;
+            height: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 3px solid var(--accent);
+            box-shadow: 0 20px 60px rgba(0, 255, 136, 0.3);
+            transition: all 0.4s ease;
+        }
+        
+        .profile-photo::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 40px;
-            background: linear-gradient(90deg, #ff006e 0%, #8338ec 50%, #3a86ff 100%);
-            opacity: 0.1;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(0, 255, 136, 0.1), transparent);
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
         }
-
-        .code-line {
-            margin: 0.5rem 0;
-            color: var(--text-secondary);
+        
+        @keyframes shine {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
-
-        .code-keyword {
-            color: #ff006e;
+        
+        .profile-photo:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 30px 80px rgba(0, 255, 136, 0.4);
         }
-
-        .code-function {
-            color: #8338ec;
-        }
-
-        .code-string {
-            color: var(--accent);
+        
+        .profile-photo img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
         }
         
         /* Projects Section */
@@ -570,6 +578,11 @@
             .nav-links {
                 display: none;
             }
+            
+            .profile-photo {
+                width: 280px;
+                height: 280px;
+            }
         }
         
         /* Scroll animations */
@@ -616,14 +629,10 @@
                         <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                     </div>
                 </div>
-                <div class="code-block">
-                    <div class="code-line"><span class="code-keyword">const</span> <span class="code-function">engineer</span> = {</div>
-                    <div class="code-line">  name: <span class="code-string">"Dharnish Giri"</span>,</div>
-                    <div class="code-line">  location: <span class="code-string">"Dortmund, Germany"</span>,</div>
-                    <div class="code-line">  specialization: [<span class="code-string">"ROS2"</span>, <span class="code-string">"CARLA"</span>, <span class="code-string">"Autonomous Vehicles"</span>],</div>
-                    <div class="code-line">  passion: <span class="code-string">"Robotics & AI"</span>,</div>
-                    <div class="code-line">  <span class="code-function">available</span>: <span class="code-keyword">true</span></div>
-                    <div class="code-line">};</div>
+                <div class="profile-photo-container">
+                    <div class="profile-photo">
+                        <img src="profile-photo.jpg" alt="Dharnish Giri">
+                    </div>
                 </div>
             </div>
         </div>
@@ -662,7 +671,7 @@
                         </div>
                         <span style="color: var(--text-secondary); white-space: nowrap;">Oct 2024 – Present</span>
                     </div>
-                    
+                    <p style="color: var(--text-secondary);">Currently developing CARLA-ROS2 teleoperation systems at TU Dortmund's CNI Chair.</p>
                 </div>
                 
                 <div class="contact-item fade-in" style="flex-direction: column; align-items: flex-start; padding: 2rem;">
